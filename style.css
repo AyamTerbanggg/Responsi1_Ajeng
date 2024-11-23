@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+}
+
+:root {
+    --bg-color: #1f2536;
+    --snd-bg-color: #262B40;
+    --text-color: white;
+    --main-color: rgb(255, 84, 184);
+}
+
+html {
+    font-size: 62,5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+img {
+    max-width: 100%; /* Ensure images do not overflow their containers */
+    height: auto; /* Maintain aspect ratio */
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--main-color);
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Pastikan container memiliki lebar 100% */
+    position: relative; /* Membuat posisi navbar relatif terhadap container */
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+    margin-left: 7rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 1rem;
+    margin-right: 7rem;
+}
+
+.navbar-right a {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-left: 2rem;
+    font-weight: 700;
+}
+
+.navbar-right a:hover,
+.navbar-right a.active {
+    color: var(--text-color); /* Ganti warna aktif */
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .container {
+    display: flex;
+    justify-content: flex-end; /* Memindahkan elemen ke kanan */
+    align-items: center; /* Menjaga elemen tetap sejajar secara vertikal */
+    height: 100vh; /* Memastikan container memenuhi tinggi viewport */
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5vw;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-img img {
+    width: 25vw;
+    animation: floatImage 4s ease-in-out infinite;
+    border-radius: 3rem;
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--snd-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
+    gap: 2rem; /* Jarak antara elemen */
+    background: var(--snd-bg-color);
+    padding: 2rem; /* Tambahkan padding jika diperlukan */
+}
+
+.about-img {
+    flex: 1; /* Mengizinkan gambar untuk mengambil ruang */
+    display: flex; /* Menggunakan flexbox untuk menempatkan gambar */
+    justify-content: center; /* Pusatkan gambar secara horizontal */
+    align-items: center; /* Pusatkan gambar secara vertikal */
+}
+
+.about-img img {
+    max-width: 100%; /* Membuat gambar responsif */
+    max-height: auto; /* Membatasi tinggi maksimum gambar */
+    border-radius: 3rem;
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.about-content {
+    flex: 2; /* Mengizinkan konten untuk mengambil lebih banyak ruang */
+    display: flex; /* Menggunakan flexbox untuk menempatkan konten */
+    flex-direction: column; /* Menyusun elemen dalam kolom */
+    justify-content: center; /* Pusatkan konten secara vertikal */
+    align-items: center; /* Pusatkan konten secara horizontal */
+    text-align: center; /* Pusatkan teks */
+    padding: 2rem; /* Tambahkan padding jika diperlukan */
+}
+
+.about-content h2 {
+    line-height: 1.2;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.portfolio {
+    display: flex;
+    flex-direction: column; /* Menyusun elemen dalam kolom */
+    align-items: center; /* Pusatkan secara horizontal */
+}
+
+.portfolio h2 {
+    margin-bottom: 5rem;
+    display: flex;
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.portfolio-container .portfolio-box {
+    flex: 0 0 150px;
+    height: 150px;
+    background: var(--snd-bg-color);
+    padding: 0;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.portfolio-container .portfolio-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.1);
+}
+
+.portfolio-box img {
+    width: 100%; /* Make the image fill the box */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 80%; /* Limit maximum width of the image */
+    max-height: 80%; /* Limit maximum height of the image */
+}
+
+.portfolio-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.portfolio-box h3 {
+    font-size: 2.6rem;
+}
+
+.portfolio-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+.resume {
+    background: var(--snd-bg-color);
+}
+
+.resume h2 {
+    margin-bottom: 4rem;
+}
+
+.resume-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.resume-container .resume-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.resume-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+    opacity: 0.7;
+}
+
+.resume-box:hover img {
+    transform: scale(1.1);
+}
+
+.resume-box .resume-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+    opacity: 0;
+}
+
+.resume-box:hover .resume-layer {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.resume-layer h4 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.resume-layer p {
+    font-size: 1.2rem;
+    margin: .3rem 0 1rem;
+    max-height: 40%;
+    overflow: hidden;
+}
+
+.resume-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.resume-layer a i {
+    font-size: 2rem;
+    color: var(--snd-bg-color);
+}
+
+.contact h2 {
+    margin-bottom: 1rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--snd-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.social-media2 {
+    display: flex;                   /* Use flexbox */
+    justify-content: center;         /* Center items horizontally */
+    align-items: center;             /* Center items vertically (if needed) */
+    flex-wrap: wrap;                 /* Allow items to wrap if necessary */
+    margin: 0;                 /* Add margin for spacing */
+}
+
+.social-media2 a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin: 0rem 1.5rem 0rem 0;
+    transition: .5s ease;
+}
+
+.social-media2 a:hover {
+    background: var(--main-color);
+    color: var(--snd-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--snd-bg-color);
+}
+
+.footer-text {
+    font-size: 1.6rem;
+}
+
+.footer-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 1rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-icon a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-icon a i {
+    font-size: 2.4rem;
+    color: var(--snd-bg-color);
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+
+    .navbar-right a {
+        font-size: 1.2rem; /* Reduce font size for larger screens */
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 7rem 3%; /* Adjust padding for smaller screens */
+    }
+
+    .portfolio {
+        padding: 5rem; /* Adjust padding for the portfolio section */
+    }
+
+    .resume {
+        padding-bottom: 5rem; /* Adjust padding for the resume section */
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block; /* Show menu icon on smaller screens */
+        cursor: pointer;
+    }
+
+    .logo {
+        margin-left: 0; /* Mengurangi margin kiri pada layar kecil */
+    }
+
+    .navbar-right {
+        display: none; /* Hide navbar links on small screens */
+        flex-direction: column; /* Stack links vertically if needed */
+        width: 100%; /* Optional: full width */
+        background: var(--bg-color); /* Background color */
+        position: absolute; /* Position it absolutely */
+        top: 100%; /* Position below the header */
+        left: 0; /* Align to the left */
+        z-index: 100; /* Ensure it appears above other content */
+        padding: 1rem; /* Add padding */
+        border-radius: 0.5rem; /* Optional: rounded corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+    }
+
+    .navbar-right.active {
+        display: flex; /* Show navbar links when active */
+    }
+
+    .navbar-right a {
+        display: block; /* Stack navbar items vertically */
+        font-size: 2rem;
+        margin: 2rem 0; /* Add margin for spacing */
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem; /* Adjust font size */
+    }
+
+    .home-content h1 {
+        font-size: 4rem; /* Adjust font size */
+    }
+
+    .home-img img {
+        width: 90vw; /* Make image responsive */
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column; /* Stack about section vertically */
+    }
+
+    .about-img img {
+        width: 90vw; /* Make image responsive */
+        margin-top: 4rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem; /* Adjust margin */
+    }
+
+    .resume h2 {
+        margin-bottom: 3rem; /* Adjust margin */
+    }
+
+    .resume-container {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid layout */
+    }
+}
+
+@media (max-width: 671px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home-img img {
+        width: 80vw;
+        margin-top: 8rem;
+    }
+
+    .about-img img {
+        width: 100vw;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%; /* Adjust base font size */
+    }
+
+    .navbar-right a {
+        font-size: 1.2rem; /* Smaller font size */
+    }
+}
